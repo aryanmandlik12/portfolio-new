@@ -1,103 +1,326 @@
-import Image from "next/image";
+'use client';
+
+import { useState } from "react";
+import Image from 'next/image'
+import {motion} from "framer-motion";
+import { MoveUpRight } from 'lucide-react'
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  const [message, setMessage] = useState("");
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const email = "aryanmandlik2022@vitbhopal.ac.in";
+    const subject = encodeURIComponent("Let's Connect");
+    const body = encodeURIComponent(message);
+    window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
+  };
+
+  return (
+    <>
+      <div className="flex flex-col gap-[6vw] font-[poppins] tracking-tighter text-neutral-200">
+        <motion.div 
+        className="font-black text-[7vw] leading-[6vw]">
+          SOFTWARE <br /> <span className="text-neutral-600">ENGINEER</span>
+        </motion.div>
+        <div className="text-[1.7vw]">
+          As a CSE student with specializing in Artificial Intelligence and Machine Learning at VIT Bhopal (graduating in 2026), I am passionate about solving real-world problems through data-driven solutions.
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        {/* <div className="flex flex-row gap-[5vw]">
+          <div className="flex flex-col text-[3vw] leading-14 text-center font-extrabold">
+            <div className="text-[4vw]">
+              2+
+            </div>
+            <div className="font-medium text-neutral-600">
+              Years
+            </div>
+          </div>
+
+          <div className="flex flex-col text-[3vw] leading-14 text-center font-extrabold">
+            <div className="text-[4vw]">
+              2+
+            </div>
+            <div className="font-medium text-neutral-600">
+              Years
+            </div>
+          </div>
+
+          <div className="flex flex-col text-[3vw] leading-14 text-center font-extrabold">
+            <div className="text-[4vw]">
+              2+
+            </div>
+            <div className="font-medium text-neutral-600">
+              Years
+            </div>
+          </div>
+        </div> */}
+
+        <div className="mt-[6vw] flex flex-col gap-[3vw] mb-[4vw]">
+          <div className="font-black text-[7vw] leading-[7vw]">
+          RECENT <br /> <span className="text-neutral-600">PROJECTS</span>
+          </div>
+          <div className="flex flex-col gap-[1vw]">
+
+          <div className='flex flex-row items-center gap-[3vw]' >
+            <div className='w-[10vw] h-[10vw] rounded-2xl relative overflow-hidden'>
+              <Image 
+              src="/Mandlik.jpg"
+              alt="SOME RANDOM ASS AI PROJECT"
+              fill
+              className='object-cover'
+              />
+            </div>
+            <div className='font-bold text-[1.8vw]'>
+              Crypto Price Prediction <br /> <span className='flex flex-row gap-5 mt-4 text-[0.8vw] font-light'>
+              <div className="border border-neutral-700 rounded-full px-4 py-2 hover:bg-neutral-700 hover:text-neutral-200" >
+                Streamlit
+              </div>
+              <div className="border border-neutral-700 rounded-full px-4 py-2 hover:bg-neutral-700 hover:text-neutral-200">
+                Pandas
+              </div>
+              <div className="border border-neutral-700 rounded-full px-4 py-2 hover:bg-neutral-700 hover:text-neutral-200">
+                Numpy
+              </div>
+              <div className="border border-neutral-700 rounded-full px-4 py-2 hover:bg-neutral-700 hover:text-neutral-200">
+                Yfinance
+              </div>
+              </span>
+            </div>
+              <a
+              href="https://github.com/aryanmandlik12/CryptoPrediction"
+              >
+                <MoveUpRight 
+                width = "40"
+                height = "40"
+                color = "orange"
+                />
+              </a>
+          </div>
+
+            <div className='flex flex-row items-center gap-[3vw]'>
+            <div className='w-[10vw] h-[10vw] rounded-2xl relative overflow-hidden'>
+              <Image 
+              src="/Mandlik.jpg"
+              alt="SOME RANDOM ASS AI PROJECT"
+              fill
+              className='object-cover'
+              />
+            </div>
+            <div className='font-bold text-[1.6vw]'>
+              Face Detection <br /> <span className='flex flex-row gap-5 mt-4 text-[0.8vw] font-light'>
+              <div className="border border-neutral-700 rounded-full px-4 py-2 hover:bg-neutral-700 hover:text-neutral-200" >
+                Streamlit
+              </div>
+              <div className="border border-neutral-700 rounded-full px-4 py-2 hover:bg-neutral-700 hover:text-neutral-200">
+                Pandas
+              </div>
+              <div className="border border-neutral-700 rounded-full px-4 py-2 hover:bg-neutral-700 hover:text-neutral-200">
+                Numpy
+              </div>
+              <div className="border border-neutral-700 rounded-full px-4 py-2 hover:bg-neutral-700 hover:text-neutral-200">
+                Yfinance
+              </div>
+              </span>
+            </div>
+            <a
+              href="https://github.com/aryanmandlik12/face-detection"
+              >
+                <MoveUpRight 
+                width = "40"
+                height = "40"
+                color = "orange"
+                />
+              </a>
+          </div>
+
+          <div className='flex flex-row items-center gap-[3vw]'>
+            <div className='w-[10vw] h-[10vw] rounded-2xl relative overflow-hidden'>
+              <Image 
+              src="/Mandlik.jpg"
+              alt="SOME RANDOM ASS AI PROJECT"
+              fill
+              className='object-cover'
+              />
+            </div>
+              <div className='font-bold text-[1.6vw]'>
+                Player Re-identification <br /> <span className='flex flex-row gap-5 mt-4 text-[0.8vw] font-light'>
+              <div className="border border-neutral-700 rounded-full px-4 py-2 hover:bg-neutral-700 hover:text-neutral-200" >
+                Streamlit
+              </div>
+              <div className="border border-neutral-700 rounded-full px-4 py-2 hover:bg-neutral-700 hover:text-neutral-200">
+                Pandas
+              </div>
+              <div className="border border-neutral-700 rounded-full px-4 py-2 hover:bg-neutral-700 hover:text-neutral-200">
+                Numpy
+              </div>
+              <div className="border border-neutral-700 rounded-full px-4 py-2 hover:bg-neutral-700 hover:text-neutral-200">
+                Yfinance
+              </div>
+              </span>
+              </div>
+              <a
+              href="https://github.com/aryanmandlik12/Player-Reidentification"
+              >
+                <MoveUpRight 
+                width = "40"
+                height = "40"
+                color = "orange"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div className='flex flex-col gap-[4vw] mb-[5vw]'>
+          <div className="font-black text-[7vw] leading-[7vw]">
+          TECH <br /> <span className="text-neutral-600">STACK</span>
+          </div>
+          <div className='grid grid-cols-2 gap-[3vw]'>
+            <div className='flex flex-row gap-[2vw]'>
+              <div className='p-5 bg-neutral-200 rounded-xl relative overflow-hidden w-[5vw] h-[5vw]'>
+                <Image 
+                src="/Python.png"
+                alt=""
+                fill
+                className='object-cover'
+                />
+
+              </div>
+              <div className='font-bold text-[2vw]'>
+                Python <br /> <span className='text-[1.5vw] text-neutral-400'>Programming Language</span>
+              </div>
+            </div>
+            
+                <div className='flex flex-row gap-[2vw]'>
+              <div className='p-5 bg-neutral-200 rounded-xl relative overflow-hidden w-[5vw] h-[5vw]'>
+                <Image 
+                src="/Python.png"
+                alt=""
+                fill
+                className='object-cover'
+                />
+
+              </div>
+              <div className='font-bold text-[2vw]'>
+                Java <br /> <span className='text-[1.5vw] text-neutral-400'>Programming Language</span>
+              </div>
+            </div>
+
+                        <div className='flex flex-row gap-[2vw]'>
+              <div className='p-5 bg-neutral-200 rounded-xl relative overflow-hidden w-[5vw] h-[5vw]'>
+                <Image 
+                src="/Python.png"
+                alt=""
+                fill
+                className='object-cover'
+                />
+
+              </div>
+              <div className='font-bold text-[2vw]'>
+                AWS <br /> <span className='text-[1.5vw] text-neutral-400'>Programming Language</span>
+              </div>
+            </div>
+
+                        <div className='flex flex-row gap-[2vw]'>
+              <div className='p-5 bg-neutral-200 rounded-xl relative overflow-hidden w-[5vw] h-[5vw]'>
+                <Image 
+                src="/Python.png"
+                alt=""
+                fill
+                className='object-cover'
+                />
+
+              </div>
+              <div className='font-bold text-[2vw]'>
+                Tensorflow <br /> <span className='text-[1.5vw] text-neutral-400'>Programming Language</span>
+              </div>
+            </div>
+
+                        <div className='flex flex-row gap-[2vw]'>
+              <div className='p-5 bg-neutral-200 rounded-xl relative overflow-hidden w-[5vw] h-[5vw]'>
+                <Image 
+                src="/Python.png"
+                alt=""
+                fill
+                className='object-cover'
+                />
+
+              </div>
+              <div className='font-bold text-[2vw]'>
+                OpenCV <br /> <span className='text-[1.5vw] text-neutral-400'>Programming Language</span>
+              </div>
+            </div>
+
+                        <div className='flex flex-row gap-[2vw]'>
+              <div className='p-5 bg-neutral-200 rounded-xl relative overflow-hidden w-[5vw] h-[5vw]'>
+                <Image 
+                src="/Python.png"
+                alt=""
+                fill
+                className='object-cover'
+                />
+
+              </div>
+              <div className='font-bold text-[2vw]'>
+                Scikit Learn <br /> <span className='text-[1.5vw] text-neutral-400'>Programming Language</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div className='flex flex-col gap-[4vw] mt-[2vw]'>
+          <div className="font-black text-[7vw]  leading-[7vw]">
+          LET'S <br /> <span className="text-neutral-600">CONNECT</span>
+          </div>
+
+      <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+    
+    <div className="flex flex-row gap-[4vw]">
+      <input
+        type="text"
+        placeholder="Your Name"
+        className="px-8 py-2 rounded bg-neutral-500 opacity-60 text-white"
+        required
+      />
+            <input
+        type="text"
+        placeholder="Your Email"
+        className="px-8 py-2 rounded bg-neutral-500 opacity-60 text-white"
+        required
+      />
+
     </div>
+
+        <div className="w-full">
+                <input
+        type="text"
+        placeholder="Your message"
+        value={message}
+        onChange={(e) => setMessage(e.target.value)}
+        className="px-4 w-full py-[4vw] rounded bg-neutral-500 opacity-60 text-white"
+        required
+      />
+
+        </div>
+
+      <button
+        type="submit"
+        className="px-4 py-2 bg-orange-600 rounded text-white hover:bg-orange-700"
+      >
+        Send
+      </button>
+    </form>
+        <div>
+        </div>
+        </div>
+
+        <div className="flex flex-row items-center justify-center">
+          <div className="font-[poppins] text-[2vw] font-medium ">
+                created by  <span className="text-orange-600 font-extrabold">NIKHIL DHANDA</span> | Powered by <span className="text-orange-600 font-extrabold"  >NEXTjs</span>
+          </div>
+        </div>
+      </div>
+    </>
   );
 }
