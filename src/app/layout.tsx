@@ -1,6 +1,9 @@
+'use client'
+
 import { Poppins } from 'next/font/google';
 import './globals.css';
 import Card from './components/card';
+import { motion } from 'framer-motion';
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -19,9 +22,13 @@ export default function RootLayout({
         <div className="min-h-screen grid grid-cols-1 lg:grid-cols-3 gap-[3vw] px-[9vw] py-[7vw]">
           
           
-          <div className="lg:col-span-1 self-start sticky top-[7vw]">
+          <motion.div 
+          initial={{opacity: 0, y: 20, filter: "blur(10px)"}}
+          animate={{opacity: 1, y: 0, filter: "blur(0px)"}}
+          transition={{ duration: 0.5, ease: "easeIn" }}
+          className="lg:col-span-1 self-start sticky top-[1.5vw]">
             <Card />
-          </div>
+          </motion.div>
 
           
           <div className="lg:col-span-2">

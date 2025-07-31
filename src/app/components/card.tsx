@@ -1,4 +1,4 @@
-import { Instagram, Twitter, Linkedin, Github } from "lucide-react"
+import { Instagram, Linkedin, Github } from "lucide-react"
 import Image from 'next/image';
 import "./card.css"
 
