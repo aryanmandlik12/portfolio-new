@@ -26,7 +26,7 @@ export default function RootLayout({
           initial={{opacity: 0, y: 20, filter: "blur(10px)"}}
           animate={{opacity: 1, y: 0, filter: "blur(0px)"}}
           transition={{ duration: 0.5, ease: "easeIn" }}
-          className="lg:col-span-1 self-start sticky top-[1.5vw]">
+          className="md:col-span-1 self-start md:sticky top-[1.5vw]">
             <Card />
           </motion.div>
 

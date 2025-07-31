@@ -5,10 +5,10 @@ import { motion } from 'framer-motion';
 
 export default function Contact() {
 
-      const [message, setMessage] = useState("");
+const [message, setMessage] = useState("");
 
 
-      const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const email = "aryanmandlik2022@vitbhopal.ac.in";
     const subject = encodeURIComponent("Let's Connect");
@@ -17,8 +17,9 @@ export default function Contact() {
   };
 
     return (
+
         <>
-                <div className='flex flex-col gap-[4vw] mt-[2vw]'>
+        <div className='flex flex-col gap-[4vw] mt-16 md:mt-[2vw]'>
           <motion.div 
           initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
         whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
@@ -33,7 +34,7 @@ export default function Contact() {
         transition={{ duration: 0.8, ease: "easeIn" }}
       onSubmit={handleSubmit} className="flex flex-col gap-4">
     
-    <div className="flex flex-row gap-[4vw]">
+    <div className="flex flex-col md:flex-row gap-[4vw]">
       <input
         type="text"
         placeholder="Your Name"
@@ -77,10 +78,11 @@ export default function Contact() {
           initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
         whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
         transition={{ duration: 0.6, ease: "easeIn" }}
-          className="font-[poppins] text-[1vw] font-medium ">
+          className="font-[poppins] text-xs md:text-[1vw] font-medium ">
                 created by  <span className="text-orange-600 font-extrabold">ARYAN MANDLIK</span> | All rights reserved
           </motion.div>
-        </div>
+        </div>  
         </>
+
     )
 }
