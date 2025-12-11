@@ -4,6 +4,8 @@ import { Poppins } from 'next/font/google';
 import './globals.css';
 import Card from './components/card';
 import { motion } from 'framer-motion';
+import { LanguageProvider } from './context/LanguageContext';
+import LanguageSwitcher from './components/LanguageSwitcher';
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -19,22 +21,25 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${poppins.variable}`}>
       <body className="bg-[#121212]">
-        <div className="min-h-screen grid grid-cols-1 lg:grid-cols-3 gap-[3vw] px-[9vw] py-[7vw]">
-          
-          
-          <motion.div 
-          initial={{opacity: 0, y: 20, filter: "blur(10px)"}}
-          animate={{opacity: 1, y: 0, filter: "blur(0px)"}}
-          transition={{ duration: 0.5, ease: "easeIn" }}
-          className="md:col-span-1 self-start md:sticky top-[1.5vw]">
-            <Card />
-          </motion.div>
+        <LanguageProvider>
+          <LanguageSwitcher />
+          <div className="min-h-screen grid grid-cols-1 lg:grid-cols-3 gap-[3vw] px-[9vw] py-[7vw]">
 
-          
-          <div className="lg:col-span-2">
-            {children}
+
+            <motion.div
+              initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
+              animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              transition={{ duration: 0.5, ease: "easeIn" }}
+              className="md:col-span-1 self-start md:sticky top-[1.5vw]">
+              <Card />
+            </motion.div>
+
+
+            <div className="lg:col-span-2">
+              {children}
+            </div>
           </div>
-        </div>
+        </LanguageProvider>
       </body>
     </html>
   );

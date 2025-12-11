@@ -3,6 +3,8 @@
 import { MoveUpRight, TrendingUp, ScanFace, Users, LucideIcon } from 'lucide-react';
 import { motion } from 'framer-motion'
 
+import { useLanguage } from '../../context/LanguageContext';
+
 interface Project {
   title: string;
   Icon: LucideIcon;
@@ -11,31 +13,33 @@ interface Project {
   color: string;
 }
 
-const projectsData: Project[] = [
-  {
-    title: "Crypto Price Prediction",
-    Icon: TrendingUp,
-    link: "https://github.com/aryanmandlik12/CryptoPrediction",
-    tags: ["Streamlit", "Pandas", "Numpy", "Yfinance"],
-    color: "text-green-400"
-  },
-  {
-    title: "Face Detection",
-    Icon: ScanFace,
-    link: "https://github.com/aryanmandlik12/face-detection",
-    tags: ["Streamlit", "Pandas", "Numpy", "Yfinance"],
-    color: "text-blue-400"
-  },
-  {
-    title: "Player Re-identification",
-    Icon: Users,
-    link: "https://github.com/aryanmandlik12/Player-Reidentification",
-    tags: ["Streamlit", "Pandas", "Numpy", "Yfinance"],
-    color: "text-orange-400"
-  }
-];
-
 export default function Projects() {
+  const { t } = useLanguage();
+
+  const projectsData: Project[] = [
+    {
+      title: t.projects.p1,
+      Icon: TrendingUp,
+      link: "https://github.com/aryanmandlik12/CryptoPrediction",
+      tags: ["Streamlit", "Pandas", "Numpy", "Yfinance", "Matplotlib", "Seaborn"],
+      color: "text-green-400"
+    },
+    {
+      title: t.projects.p2,
+      Icon: ScanFace,
+      link: "https://github.com/aryanmandlik12/face-detection",
+      tags: ["Python", "OpenCV", "Numpy", "Matplotlib"],
+      color: "text-blue-400"
+    },
+    {
+      title: t.projects.p3,
+      Icon: Users,
+      link: "https://github.com/aryanmandlik12/Player-Reidentification",
+      tags: ["OpenCV", "Deep SORT", "YOLOv8", "Numpy", "Matplotlib"],
+      color: "text-orange-400"
+    }
+  ];
+
   return (
     <>
       <div className="mt-[6vw] flex flex-col gap-[3vw] mb-[4vw]">
@@ -44,7 +48,7 @@ export default function Projects() {
           whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           transition={{ duration: 0.6, ease: "easeIn" }}
           className="font-black text-[7vw] leading-[7vw]">
-          RECENT <br /> <span className="text-neutral-600">PROJECTS</span>
+          {t.projects.titlePart1} <br /> <span className="text-neutral-600">{t.projects.titlePart2}</span>
         </motion.div>
         <div className="flex flex-col gap-[1vw]">
           {projectsData.map((project, index) => (
