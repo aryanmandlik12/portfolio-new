@@ -33,8 +33,8 @@ export default function Experience() {
                         </div>
                         <div>
                             <ul className="list-disc mt-4 md:mt-8 list-inside text-sm md:text-[1vw] text-neutral-300">
-                                {t.activities.bullets1.map((bullet, index) => (
-                                    <li key={index}>{bullet}</li>
+                                {(t.activities.bullets1 ?? []).map((bullet: string, index: number) => (
+                                    <li key={`${bullet}-${index}`}>{bullet}</li>
                                 ))}
                             </ul>
                         </div>
@@ -53,8 +53,8 @@ export default function Experience() {
                         </div>
                         <div>
                             <ul className="list-disc list-inside mt-4 md:mt-8 text-sm md:text-[1vw] text-neutral-300">
-                                {t.activities.bullets2.map((bullet, index) => (
-                                    <li key={index}>{bullet}</li>
+                                {(t.activities.bullets2 ?? []).map((bullet: string, index: number) => (
+                                    <li key={`${bullet}-${index}`}>{bullet}</li>
                                 ))}
                             </ul>
                         </div>

@@ -121,8 +121,16 @@ export const translations = {
             bullets2: [
                 "Praktische Erfahrung bei der Anwendung von Modellen des maschinellen Lernens auf reale Aufgaben.",
                 "Koordinierung mit Teammitgliedern für einen reibungslosen Ablauf."
+            ],
+            role3: "Data Science Praktikant",
+            org3: "Bustard Media",
+            bullets3: [
+                "Arbeitete an Social-Media-Analysen unter Verwendung von Machine-Learning-Techniken.",
+                "Anwendung von Python für Datenanalyse und Vorverarbeitung.",
+                "Unterstützung bei datengestützten Erkenntnissen für Medien- und Geschäftsziele."
             ]
         },
+
         projects: {
             titlePart1: "AKTUELLE",
             titlePart2: "PROJEKTE",

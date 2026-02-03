@@ -58,9 +58,9 @@ export default function Projects() {
           {t.projects.titlePart1} <br /> <span className="text-neutral-600">{t.projects.titlePart2}</span>
         </motion.div>
         <div className="flex flex-col gap-[1vw]">
-          {projectsData.map((project, index) => (
+          {projectsData.map((project: Project, index: number) => (
             <motion.div
-              key={index}
+              key={`${project.title ?? 'project'}-${index}`}
               initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
               whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
               transition={{ duration: 0.8, ease: "easeIn" }}
@@ -74,8 +74,8 @@ export default function Projects() {
               <div className='font-bold text-lg mt-12 md:mt-0 md:text-[1.6vw]'>
                 {project.title} <br />
                 <span className='flex flex-wrap md:flex-row gap-5 mt-4 text-[2vw] md:text-[0.8vw] font-light'>
-                  {project.tags.map((tag, tagIndex) => (
-                    <div key={tagIndex} className="border border-neutral-700 rounded-full px-4 py-2 hover:bg-neutral-700 hover:text-neutral-200">
+                  {project.tags.map((tag: string, tagIndex: number) => (
+                    <div key={`${tag}-${tagIndex}`} className="border border-neutral-700 rounded-full px-4 py-2 hover:bg-neutral-700 hover:text-neutral-200">
                       {tag}
                     </div>
                   ))}
