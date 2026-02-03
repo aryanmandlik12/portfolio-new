@@ -37,26 +37,35 @@ export const translations = {
         },
         experience: {
             title: "EXPERIENCE",
-            role1: "Project Contributor",
-            org1: "VIT Bhopal AI Innovators Hub",
+            role1: "Data Science Intern",
+            org1: "Bustard Media",
             bullets1: [
+                "Worked on social media analytics using machine learning techniques.",
+                "Applied Python for data analysis and preprocessing task.",
+                "Supported data-driven insights for media and business objectives."
+            ],
+            role2: "Project Contributor",
+            org2: "VIT Bhopal AI Innovators Hub",
+            bullets2: [
                 "Contributed to developing Darzi: AI Resume Suite for ATS-optimized, tailored resumes.",
                 "Designed resume-job matching models and integrated frontend editor for user-friendly experience.",
                 "Collaborated on full-stack development, testing, and deployment to deliver impactful AI solution."
             ],
-            role2: "Machine Learning Intern",
-            org2: "Vatshayan Technologies",
-            bullets2: [
-                "Gained hands-on experience applying machine learning models to real-world tasks.",
-                "Coordinated with team members to ensure smooth operations."
+            role3: "Machine Learning Intern",
+            org3: "Vatshayan Technologies",
+            bullets3: [
+                "Gained practical exposure to Artificial Intelligence and Machine Learning.",
+                "Applied python for theoretical and practical task implementation.",
+                "Demonstrated analytical thinking and problem solving skills."
             ]
         },
         projects: {
             titlePart1: "RECENT",
             titlePart2: "PROJECTS",
-            p1: "Crypto Price Prediction",
-            p2: "Face Detection",
-            p3: "Player Re-identification",
+            p1: "Urban Flooding Prediction",
+            p2: "Crypto Price Prediction",
+            p3: "Face Detection",
+            p4: "Player Re-identification",
         },
         carousel: {
             ai: "AI",

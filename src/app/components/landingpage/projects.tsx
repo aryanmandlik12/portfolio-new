@@ -20,19 +20,26 @@ export default function Projects() {
     {
       title: t.projects.p1,
       Icon: TrendingUp,
+      link: "https://github.com/aryanmandlik12/Urban-Flooding-",
+      tags: ["Python", "Pandas", "Numpy", "Scikit-learn", "Matplotlib", "Tensorflow"],
+      color: "text-green-400"
+    },
+    {
+      title: t.projects.p2,
+      Icon: TrendingUp,
       link: "https://github.com/aryanmandlik12/CryptoPrediction",
       tags: ["Streamlit", "Pandas", "Numpy", "Yfinance", "Matplotlib", "Seaborn"],
       color: "text-green-400"
     },
     {
-      title: t.projects.p2,
+      title: t.projects.p3,
       Icon: ScanFace,
       link: "https://github.com/aryanmandlik12/face-detection",
       tags: ["Python", "OpenCV", "Numpy", "Matplotlib"],
       color: "text-blue-400"
     },
     {
-      title: t.projects.p3,
+      title: t.projects.p4,
       Icon: Users,
       link: "https://github.com/aryanmandlik12/Player-Reidentification",
       tags: ["OpenCV", "Deep SORT", "YOLOv8", "Numpy", "Matplotlib"],
