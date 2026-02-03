@@ -13,7 +13,7 @@ export default function Internships() {
                         initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
                         whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                         transition={{ duration: 0.6, ease: "easeIn" }}
-                        className="font-black text-[7vw] mt-16 md:mt-0 leading-[7vw]">
+                        className="font-black text-[6vw] mt-16 md:mt-0 leading-[7vw]">
                         {t.experience.title}
                     </motion.div>
                 </div>
@@ -33,8 +33,8 @@ export default function Internships() {
                         </div>
                         <div>
                             <ul className="list-disc mt-4 md:mt-8 list-inside text-sm md:text-[1vw] text-neutral-300">
-                                {t.experience.bullets1.map((bullet, index) => (
-                                    <li key={index}>{bullet}</li>
+                                {(t.experience.bullets1 ?? []).map((bullet: string, idx: number) => (
+                                    <li key={`${bullet}-${idx}`}>{bullet}</li>
                                 ))}
                             </ul>
                         </div>
@@ -53,32 +53,34 @@ export default function Internships() {
                         </div>
                         <div>
                             <ul className="list-disc mt-4 md:mt-8 list-inside text-sm md:text-[1vw] text-neutral-300">
-                                {t.experience.bullets2.map((bullet, index) => (
-                                    <li key={index}>{bullet}</li>
+                                {(t.experience.bullets2 ?? []).map((bullet: string, idx: number) => (
+                                    <li key={`${bullet}-${idx}`}>{bullet}</li>
                                 ))}
                             </ul>
                         </div>
                     </motion.div>
 
-                    <motion.div
-                        initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
-                        whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-                        transition={{ duration: 0.8, ease: "easeIn" }}
-                        className="flex flex-col text-left items-start">
-                        <div className="font-[poppins] font-black text-xl md:text-[2vw]">
-                            {t.experience.role3} <span className="font-normal text-[2vw] md:text-[1vw] text-stone-500">Oct 2024 - Mar 2025</span>
-                        </div>
-                        <div className="text-md md:text-[1.5vw] mt-3 text-neutral-400 font-medium">
-                            {t.experience.org3}
-                        </div>
-                        <div>
-                            <ul className="list-disc list-inside mt-4 md:mt-8 text-sm md:text-[1vw] text-neutral-300">
-                                {t.experience.bullets3.map((bullet, index) => (
-                                    <li key={index}>{bullet}</li>
-                                ))}
-                            </ul>
-                        </div>
-                    </motion.div>
+                    {t.experience.role3 && (
+                        <motion.div
+                            initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
+                            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                            transition={{ duration: 0.8, ease: "easeIn" }}
+                            className="flex flex-col text-left items-start">
+                            <div className="font-[poppins] font-black text-xl md:text-[2vw]">
+                                {t.experience.role3} <span className="font-normal text-[2vw] md:text-[1vw] text-stone-500">Oct 2024 - Mar 2025</span>
+                            </div>
+                            <div className="text-md md:text-[1.5vw] mt-3 text-neutral-400 font-medium">
+                                {t.experience.org3}
+                            </div>
+                            <div>
+                                <ul className="list-disc list-inside mt-4 md:mt-8 text-sm md:text-[1vw] text-neutral-300">
+                                    {(t.experience.bullets3 ?? []).map((bullet: string, idx: number) => (
+                                        <li key={`${bullet}-${idx}`}>{bullet}</li>
+                                    ))}
+                                </ul>
+                            </div>
+                        </motion.div>
+                    )}
 
                 </div>
 

@@ -38,7 +38,7 @@ export default function Carousel() {
           repeat: Infinity,
         }}
       >
-        {duplicatedTechStack.map((tech, index) => (
+        {duplicatedTechStack.map((tech: { title: string }, index: number) => (
           <motion.div key={`${tech.title}-${index}`}
             initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
             whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
