@@ -13,7 +13,7 @@ export default function Internships() {
                         initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
                         whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                         transition={{ duration: 0.6, ease: "easeIn" }}
-                        className="font-black text-[7vw] mt-16 md:mt-0 leading-[7vw]">
+                        className="font-black text-[6vw] mt-16 md:mt-0 leading-[7vw]">
                         {t.experience.title}
                     </motion.div>
                 </div>
