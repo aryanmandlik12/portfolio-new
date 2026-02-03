@@ -26,10 +26,10 @@ export default function Internships() {
                         transition={{ duration: 0.8, ease: "easeIn" }}
                         className="flex flex-col text-left items-start">
                         <div className="font-[poppins] font-black text-xl md:text-[2vw]">
-                            {t.experience.role1} <span className="font-normal text-[2vw] md:text-[1vw] text-stone-500">Jul 2025 - Sep 2025</span>
+                            {t.experience.role1} <span className="font-normal text-[2vw] md:text-[1vw] text-stone-500">Sep 2025 - Dec 2025</span>
                         </div>
                         <div className="text-md md:text-[1.5vw] mt-3 text-neutral-400 font-medium">
-                            {t.experience.org1}
+                            {t.experience.org1}S
                         </div>
                         <div>
                             <ul className="list-disc mt-4 md:mt-8 list-inside text-sm md:text-[1vw] text-neutral-300">
@@ -46,7 +46,7 @@ export default function Internships() {
                         transition={{ duration: 0.8, ease: "easeIn" }}
                         className="flex flex-col text-left items-start">
                         <div className="font-[poppins] font-black text-xl md:text-[2vw]">
-                            {t.experience.role2} <span className="font-normal text-[2vw] md:text-[1vw] text-stone-500">sep 2025 - dec 2025</span>
+                            {t.experience.role2} <span className="font-normal text-[2vw] md:text-[1vw] text-stone-500">Jul 2025 - Sep 2025</span>
                         </div>
                         <div className="text-md md:text-[1.5vw] mt-3 text-neutral-400 font-medium">
                             {t.experience.org2}
