@@ -137,6 +137,7 @@ export const translations = {
             p1: "Krypto-Preisvorhersage",
             p2: "Gesichtserkennung",
             p3: "Spieler-Re-Identifizierung",
+            p4: "Player-Re-Identifizierung",
         },
         carousel: {
             ai: "KI",
